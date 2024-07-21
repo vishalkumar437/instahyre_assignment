@@ -26,11 +26,11 @@ SECRET_KEY = 'django-insecure-))c0j!sxa6i33qhl0y(58u*sq6z1z9%5+$srt0wg^t0#45s6*l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+# Change this in Production currently for debug its allowing all host
 ALLOWED_HOSTS = (
     ["*"]
 )
-
-
 
 # Application definition
 
@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     'user',
     'contact_spam',
-    
 ]
 
 REST_FRAMEWORK = {

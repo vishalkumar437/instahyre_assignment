@@ -8,6 +8,7 @@ class Contact(models.Model):
     phone_number = models.CharField(max_length=LENGTH.PHONE_NUMBER, blank=False, null=False)
     email = models.EmailField(max_length=LENGTH.EMAIL, blank=True, null=True)
     objects = models.Manager()
+    is_spam = models.BooleanField(default=False)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
