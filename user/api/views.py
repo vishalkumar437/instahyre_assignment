@@ -9,16 +9,6 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-class BaseAuthPermissionClass:
-    """
-    Base class for setting authentication and permission classes.
-    """
-    authentication_classes = [
-        TokenAuthentication,
-    ]
-    permission_classes = [
-        IsAuthenticated,
-    ]
 
 class RegisterUserView(generics.GenericAPIView):
     """

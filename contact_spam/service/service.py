@@ -48,10 +48,7 @@ def report_spam_by_phone(request):
         if spam_created:
             logger.info("Spam reported successfully for phone number: %s", phone_number)
             # Also update is_spam field in Contact model
-            contacts = Contact.objects.filter(phone_number=phone_number)
-            for contact in contacts:
-                contact.is_spam = True
-                contact.save()
+            contacts = Contact.objects.filter(phone_number=phone_number).update(is_spam=True)
             return None, spam_created
     except IntegrityError as e:
         logger.error("Phone number already reported as spam: %s", phone_number)
